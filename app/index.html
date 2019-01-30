@@ -3,10 +3,64 @@
 <head>
 	<title>Aleph Frontend Coding Exam</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<div class="header">
+		<table><tr>
+			<td id="space1">
+
+			</td>
+			<td><img align="right" src="../assets/logo.png" width="75px" /></td>
+			<td id="space2">
+
+			</td>
+			<td id="welcome"> Welcome back, <b>Daeny888!</b></td></tr></table>
+	</div>
 </head>
 <body>
+	<div id="body-head">
+		<b id="body-head-text">List of Projects</b>
+	</div>
+
+	<div id="body-head-2">
+		A unique breed of engineers, craftsmen & <br/>
+		artists spread across Singapore, Indonesia, Malaysia, Thailand and Vietnam.
+	</div>
 
 
 <script type="text/javascript" src="script.js"></script>
+<script>
+fetch('http://dev.aleph-labs.com/clients/api/projects.json', {
+  mode: 'no-cors', // 'cors' by default
+  usr: 'alephguest',
+  pwd: 'alephguest@2017'
+})
+.then(function(response) {
+  console.log(JSON.stringify(response))
+})
+.catch(error => {
+	console.log(error);
+});
+
+/*postData(`http://example.com/answer`, {answer: 42})
+  .then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
+  .catch(error => console.error(error));
+
+function postData(url = ``, data = {}) {
+  // Default options are marked with *
+    return fetch(url, {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, cors, *same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+            "Content-Type": "application/json",
+            // "Content-Type": "application/x-www-form-urlencoded",
+        },
+        redirect: "follow", // manual, *follow, error
+        referrer: "no-referrer", // no-referrer, *client
+        body: JSON.stringify(data), // body data type must match "Content-Type" header
+    })
+    .then(response => response.json()); // parses response to JSON
+}*/
+</script>
 </body>
 </html>
